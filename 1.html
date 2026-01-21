@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Page</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+  }
+
+  header {
+    background: #5b9aee;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .container {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+  }
+
+  .column {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .columnmiddle {
+    background-color: rgb(126, 226, 226);
+  }
+  .left, .right {
+    width: 25%;
+  }
+
+  .middle {
+    width: 50%;
+  }
+
+  img.profile-pic {
+    width: 100%;
+    border-radius: 50%;
+  }
+
+  h3 {
+    margin-top: 10px;
+  }
+
+  input, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background: #1877f2;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #145dbf;
+  }
+
+</style>
+</head>
+<body>
+
+<header>My Profile</header>
+
+<div class="container">
+  <!-- Left Column -->
+  <div class="column left">
+    <img src="https://wallpapers.com/images/hd/luffy-funny-4c5sez94jeqcihqr.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+    <h3 id="userName">Abhishek</h3>
+    <p id="userEmail">abhi7087@gmail.com</p>
+  </div>
+
+  <!-- Middle Column -->
+  <div class="column middle">
+    <h3>Update Your Information</h3>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <input type="email" id="emailInput" placeholder="Enter your email">
+    <input type="text" id="picInput" placeholder="Enter profile image URL">
+    <button onclick="updateProfile()">Update Profile</button>
+  </div>
+
+  <!-- Right Column -->
+  <div class="column right">
+    <h3>Suggestions</h3>
+    <p>Shiv</p>
+    <p>Shub</p>
+    <p>Rio</p>
+  </div>
+</div>
+
+<script>
+function updateProfile() {
+    const name = document.getElementById('nameInput').value;
+    const email = document.getElementById('emailInput').value;
+    const pic = document.getElementById('picInput').value;
+
+    if(name) document.getElementById('userName').innerText = name;
+    if(email) document.getElementById('userEmail').innerText = email;
+    if(pic) document.getElementById('profilePic').src = pic;
+
+    // Clear input fields after updating
+    document.getElementById('nameInput').value = '';
+    document.getElementById('emailInput').value = '';
+    document.getElementById('picInput').value = '';
+}
+</script>
+
+</body>
+</html>
